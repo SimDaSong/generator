@@ -1,0 +1,17 @@
+name: Update gist
+on:
+  repository_dispatch:
+    types: [build-event]
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  update-gist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update gist
+        uses: SimDaSong/generator@main
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GIST_ID: 1bb1216d640dae24c7379614a2142a55
+          TIMEZONE: Asia/Seoul
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
