@@ -1,0 +1,6 @@
+name: "generator"
+author: "SimDaSong"
+description: "with openai api"
+runs:
+  using: "node16"
+  main: "dist/index.js"
